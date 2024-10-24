@@ -41,7 +41,7 @@ services:
 
 networks:
   app-network:
-    driver: bridge
+    external: false
 
 volumes:
   db-data:
