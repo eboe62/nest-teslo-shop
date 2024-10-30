@@ -11,6 +11,8 @@ dockerfile copy
 dockerfile copy 2
 /src/app.module copy.ts
 /src/app.module copy 2.ts
+/src/main copy.ts
+/src/main copy 2.ts
 /src/products/products.service copy.ts
 /src/products/products.service copy 2.ts
 /src/seed/seed.controller copy.ts
