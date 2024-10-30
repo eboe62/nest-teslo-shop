@@ -1,5 +1,5 @@
 # Usa una imagen base oficial de Node.js (versión LTS)
-FROM node:17-alpine
+FROM node:18-alpine
 
 # Instala dependencias del sistema y curl
 RUN apk update && apk add --no-cache git curl
