@@ -1,0 +1,53 @@
+# compiled output
+/dist
+/node_modules
+
+postgres/
+
+.env
+
+nest-teslo-shop.zip
+dockerfile copy
+dockerfile copy 2
+/src/app.module copy.ts
+/src/app.module copy 2.ts
+/src/products/products.service copy.ts
+/src/products/products.service copy 2.ts
+/src/seed/seed.controller copy.ts
+/src/seed/seed.controller copy 2.ts
+/src/seed/seed.module copy.ts
+/src/seed/seed.module copy 2.ts
+/src/seed/seed.service copy.ts
+/src/seed/seed.service copy 2.ts
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+
+# Tests
+/coverage
+/.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
