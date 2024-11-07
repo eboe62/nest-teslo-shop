@@ -9,6 +9,8 @@ postgres/
 nest-teslo-shop.zip
 dockerfile copy
 dockerfile copy 2
+docker-compose.yaml copy
+docker-compose.yaml copy 2
 /src/app.module copy.ts
 /src/app.module copy 2.ts
 /src/main copy.ts
