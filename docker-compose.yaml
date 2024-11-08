@@ -1,7 +1,7 @@
 # Docker Compose para backend y base de datos
 version: '3.8'
 services:
-  
+
   # Servicio del Backend (NestJS)
   app:
     build:
@@ -23,10 +23,12 @@ services:
       - db
     networks:
       - app-network
-    # Limitación de recursos para el backend
-    mem_limit: 256m         # Límite de memoria a 256 MB
-    memswap_limit: 512m     # Límite de memoria + swap a 512 MB
-    cpus: "0.5"             # Límite de CPU a 0.5 núcleos
+    deploy:
+      resources:
+        limits:
+          memory: 256M           # Límite de memoria para el backend
+          memory_swap: 512M       # Límite de swap a 512 MB para el backend
+          cpus: "0.5"             # Límite de CPU a 0.5 núcleos para el backend
 
   # Servicio de Base de Datos (PostgreSQL)
   db:
@@ -40,10 +42,12 @@ services:
       - db-data:/var/lib/postgresql/data
     networks:
       - app-network
-    # Limitación de recursos para la base de datos
-    mem_limit: 512m         # Límite de memoria a 512 MB
-    memswap_limit: 1024m    # Límite de memoria + swap a 1 GB
-    cpus: "0.25"            # Límite de CPU a 0.25 núcleos
+    deploy:
+      resources:
+        limits:
+          memory: 512M           # Límite de memoria para la base de datos
+          memory_swap: 1024M      # Límite de swap a 1 GB para la base de datos
+          cpus: "0.25"            # Límite de CPU a 0.25 núcleos para la base de datos
 
 networks:
   app-network:
