@@ -23,9 +23,12 @@ services:
       - db
     networks:
       - app-network
-    mem_limit: 512M           # Límite de memoria directo
-    memswap_limit: 768M       # Límite de swap (memoria + swap)
-    cpus: "0.75"              # Límite de CPU a 0.75 núcleos
+    deploy:
+      resources:
+        limits:
+          memory: 512M           # Límite de memoria para el  backend
+          memory_swap: 768M       # Límite de swap a 512 MB para el backend
+          cpus: "0.75"             # Límite de CPU a 0.5 núcleos para el backend
 
   # Servicio de Base de Datos (PostgreSQL)
   db:
@@ -39,9 +42,12 @@ services:
       - db-data:/var/lib/postgresql/data
     networks:
       - app-network
-    mem_limit: 512M           # Límite de memoria directo
-    memswap_limit: 768M       # Límite de swap (memoria + swap)
-    cpus: "0.5"               # Límite de CPU a 0.5 núcleos
+    deploy:
+      resources:
+        limits:
+          memory: 512M           # Límite de memoria para la base de datos
+          memory_swap: 768M      # Límite de swap a 1 GB para la base de datos
+          cpus: "0.5"            # Límite de CPU a 0.25 núcleos para la base de datos
 
 networks:
   app-network:
