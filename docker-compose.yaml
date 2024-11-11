@@ -23,27 +23,6 @@ services:
       - db
     networks:
       - app-network
-    # Limitación de recursos para el backend
-    mem_limit: 256m         # Límite de memoria a 256 MB
-    memswap_limit: 512m     # Límite de memoria + swap a 512 MB
-    cpus: "0.5"             # Límite de CPU a 0.5 núcleos
-
-  # Servicio de Base de Datos (PostgreSQL)
-  db:
-    image: postgres:14.3
-    restart: always
-    environment:
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USERNAME}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    networks:
-      - app-network
-    # Limitación de recursos para la base de datos
-    mem_limit: 512m         # Límite de memoria a 512 MB
-    memswap_limit: 1024m    # Límite de memoria + swap a 1 GB
-    cpus: "0.25"            # Límite de CPU a 0.25 núcleos
 
 networks:
   app-network:
